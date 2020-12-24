@@ -544,28 +544,6 @@ function setOuputPaneSize() {
 }
 
 /**
- * Returns an object containing the current values of run settings
- * @returns {Object}
- */
-function getRunSettingsData() {
-    $("#run-dot").attr("name", "runAuto");
-    let form = $("#input").serializeFormJSON();
-    form.tab = [];
-
-    $(".check-run-tab.checked").each(function (index, element) {
-        form.tab.push($(this).val());
-    });
-
-    if (form.tab.length == 0) {
-        delete form.tab;
-    }
-
-    $("#run-dot").removeAttr("name");
-
-    return form;
-}
-
-/**
  * Initialize the layout pane of the editor and output sections
  */
 function initializeLayout() {
@@ -1595,6 +1573,7 @@ function setJSONInput(config) {
         });
         let tabID;
         $(config.program).each(function (index, element) {
+            // eslint-disable-next-line no-unused-vars
             tabID = addEditorTab(config.program[index]);
         });
         if ({}.hasOwnProperty.call(config, "tab")) {
@@ -2735,6 +2714,7 @@ function initializeSnippets() {
                     langTools.addCompleter(completer);
                     break;
             }
+            break;
         case "asp":
             switch (solverChosen) {
                 case "dlv":

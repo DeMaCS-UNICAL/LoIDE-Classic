@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const APIWSEvents = {
     emit: {
         run: "run",
