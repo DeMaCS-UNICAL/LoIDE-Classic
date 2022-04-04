@@ -47,26 +47,25 @@
     "dependencies": {
         "ajv": "^6.12.6",
         "compression": "^1.7.3",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "express-force-ssl": "^0.3.2",
-        "helmet": "^4.2.0",
-        "json-pointer": "^0.6.1",
-        "websocket": "^1.0.33"
+        "helmet": "^5.0.2",
+        "json-pointer": "^0.6.2"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.10",
-        "@babel/preset-env": "^7.12.11",
-        "browser-sync": "^2.26.13",
-        "eslint": "^7.16.0",
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
+        "browser-sync": "^2.27.9",
+        "eslint": "^8.12.0",
         "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^7.0.1",
+        "gulp-autoprefixer": "^8.0.0",
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
         "gulp-csso": "^4.0.1",
         "gulp-html-minifier-terser": "^6.0.1",
         "gulp-inject-string": "^1.1.2",
         "gulp-nodemon": "^2.5.0",
-        "gulp-uglify-es": "^2.0.0"
+        "gulp-uglify-es": "^3.0.0"
     },
     "analyze": true,
     "homepage": "https://github.com/DeMaCS-UNICAL/LoIDE#readme"
