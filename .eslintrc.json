@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true,
+        "jquery": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "rules": {
+        "no-unused-vars": [
+            "warn",
+            { "vars": "all", "args": "none", "ignoreRestSiblings": false }
+        ]
+    },
+    "globals": {
+        "API": true,
+        "io": true,
+        "ace": true,
+        "Mousetrap": true,
+        "ClipboardJS": true,
+        "APIWSEvents": true,
+        "Errors": true
+    }
+}

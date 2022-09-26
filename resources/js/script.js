@@ -544,28 +544,6 @@ function setOuputPaneSize() {
 }
 
 /**
- * Returns an object containing the current values of run settings
- * @returns {Object}
- */
-function getRunSettingsData() {
-    $("#run-dot").attr("name", "runAuto");
-    let form = $("#input").serializeFormJSON();
-    form.tab = [];
-
-    $(".check-run-tab.checked").each(function (index, element) {
-        form.tab.push($(this).val());
-    });
-
-    if (form.tab.length == 0) {
-        delete form.tab;
-    }
-
-    $("#run-dot").removeAttr("name");
-
-    return form;
-}
-
-/**
  * Initialize the layout pane of the editor and output sections
  */
 function initializeLayout() {
@@ -735,9 +713,9 @@ function initializeOutputPane() {
         let preChart = text.slice(start - 1, start);
         let postChart = text.slice(end, end + 1);
         let selected = text.slice(start, end);
-        let isPreChartCompliance = preChart.match(/[\{\s\,]/g);
-        let isPostChartCompliance = postChart.match(/[\(\s\,]/g);
-        let isSelectedWordCompliance = !selected.match(/[\s\(\)\,]/g);
+        let isPreChartCompliance = preChart.match(/[{\s,]/g);
+        let isPostChartCompliance = postChart.match(/[(\s,]/g);
+        let isSelectedWordCompliance = !selected.match(/[\s(),]/g);
         if (
             isPreChartCompliance &&
             isPostChartCompliance &&
@@ -1595,6 +1573,7 @@ function setJSONInput(config) {
         });
         let tabID;
         $(config.program).each(function (index, element) {
+            // eslint-disable-next-line no-unused-vars
             tabID = addEditorTab(config.program[index]);
         });
         if ({}.hasOwnProperty.call(config, "tab")) {
@@ -2712,9 +2691,7 @@ function initializeSnippets() {
             switch (solverChosen) {
                 case "idlv":
                     completer = {
-                        identifierRegexps: [
-                            /[a-zA-Z_0-9\#\:\$\-\u00A2-\uFFFF]/,
-                        ],
+                        identifierRegexps: [/[a-zA-Z_0-9#:$\-\u00A2-\uFFFF]/],
                         getCompletions: function (
                             editor,
                             session,
@@ -2735,13 +2712,12 @@ function initializeSnippets() {
                     langTools.addCompleter(completer);
                     break;
             }
+            break;
         case "asp":
             switch (solverChosen) {
                 case "dlv":
                     completer = {
-                        identifierRegexps: [
-                            /[a-zA-Z_0-9\#\:\$\-\u00A2-\uFFFF]/,
-                        ],
+                        identifierRegexps: [/[a-zA-Z_0-9#:$\-\u00A2-\uFFFF]/],
                         getCompletions: function (
                             editor,
                             session,
@@ -2942,9 +2918,7 @@ function initializeSnippets() {
 
                 case "dlv2":
                     completer = {
-                        identifierRegexps: [
-                            /[a-zA-Z_0-9\#\:\$\-\u00A2-\uFFFF]/,
-                        ],
+                        identifierRegexps: [/[a-zA-Z_0-9#:$\-\u00A2-\uFFFF]/],
                         getCompletions: function (
                             editor,
                             session,
