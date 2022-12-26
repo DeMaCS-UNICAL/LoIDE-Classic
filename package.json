@@ -62,7 +62,7 @@
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
         "gulp-csso": "^4.0.1",
-        "gulp-html-minifier-terser": "^6.0.1",
+        "gulp-html-minifier-terser": "^7.1.0",
         "gulp-inject-string": "^1.1.2",
         "gulp-nodemon": "^2.5.0",
         "gulp-uglify-es": "^3.0.0"
